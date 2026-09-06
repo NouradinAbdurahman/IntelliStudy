@@ -1,5 +1,5 @@
 ![Cover Image](https://i.ibb.co/39gDS6Fq/INTELLSTUDY.png)
-# IntelliStudy - AI Tools for Students (Using DAKAEi Console API)
+# IntelliStudy - AI Tools for Students (Using OpenRouter API)
 
 IntelliStudy is an AI-powered learning platform designed to enhance the educational experience for students of all levels. This project leverages advanced AI capabilities to provide practical tools that help with common academic tasks, making learning more efficient and accessible.
 
@@ -30,7 +30,7 @@ IntelliStudy is built using modern web technologies:
 
 - **Frontend**: Next.js, React, TailwindCSS
 - **UI Components**: Shadcn UI
-- **AI Integration**: Advanced language models via Dakaei API
+- **AI Integration**: Advanced language models via the OpenRouter API, with automatic fallback across multiple free models so the app keeps responding even if one model is unavailable
 - **Responsive Design**: Fully optimized for all devices from mobile to desktop
 
 ## Environment Variables
@@ -38,10 +38,10 @@ IntelliStudy is built using modern web technologies:
 This project uses environment variables to store API keys securely. Before running the project:
 
 1. Create a `.env` file in the root directory
-2. Get your DAKAEi API Key from DAKAEi API Console ([(https://console.dakaei.com/)](https://console.dakaei.com/api-keys))
-3. Add your API keys as shown in `.env.example`:
+2. Get your OpenRouter API Key from the [OpenRouter dashboard](https://openrouter.ai/settings/keys)
+3. Add your API key as shown in `.env.example`:
    ```
-   DAKAEI_API_KEY=your_dakaei_api_key_here
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
    ```
 4. Never commit your actual `.env` file to version control
 

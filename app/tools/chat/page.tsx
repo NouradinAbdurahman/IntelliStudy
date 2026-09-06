@@ -198,13 +198,13 @@ export default function ChatPage() {
       setAwaitingNouradinInfo(false)
       // Animate the response
       let i = 0
-      const step = 3
+      const step = 20
       setIsTyping(true)
       function typeNextChar() {
         if (i < fullInfo.length) {
           setPartialResponse(fullInfo.slice(0, i + step))
           i += step
-          setTimeout(typeNextChar, 8)
+          setTimeout(typeNextChar, 3)
         } else {
           setMessages(prev => [...prev, { role: "assistant", content: fullInfo }])
           setPartialResponse("")
@@ -226,13 +226,13 @@ export default function ChatPage() {
       setAwaitingNouradinInfo(true)
       // Animate the response
       let i = 0
-      const step = 3
+      const step = 20
       setIsTyping(true)
       function typeNextChar() {
         if (i < shortInfo.length) {
           setPartialResponse(shortInfo.slice(0, i + step))
           i += step
-          setTimeout(typeNextChar, 8)
+          setTimeout(typeNextChar, 3)
         } else {
           setMessages(prev => [...prev, { role: "assistant", content: shortInfo }])
           setPartialResponse("")
@@ -277,14 +277,14 @@ export default function ChatPage() {
       // let currentPauseFunction = pauseForThisSession // (no longer needed)
 
       let i = 0
-      const step = 3; // Number of characters to reveal per tick
+      const step = 20; // Number of characters to reveal per tick
       function typeNextChar() {
         if (i < response.length) {
           const currentPartialText = response.slice(0, i + step)
           setPartialResponse(currentPartialText)
           i += step
           // Much faster typing for code blocks and math expressions
-          const delay = response.slice(i-3, i).includes('\\') || response[i] === '`' ? 1 : 8
+          const delay = response.slice(i-3, i).includes('\\') || response[i] === '`' ? 1 : 3
           // Only continue if we haven't been paused
           if (shouldContinueTyping) {
             setTimeout(typeNextChar, delay)

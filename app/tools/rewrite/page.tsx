@@ -130,12 +130,12 @@ export default function RewritePage() {
       const result = await rewriteContent(inputText, style)
       // Animate the rewritten text like the chatbot
       let i = 0
-      const step = 3
+      const step = 20
       function typeNextChar() {
         if (i < result.length) {
           setPartialRewrittenText(result.slice(0, i + step))
           i += step
-          typingTimeout.current = setTimeout(typeNextChar, 8)
+          typingTimeout.current = setTimeout(typeNextChar, 3)
         } else {
           setPartialRewrittenText(result)
           setRewrittenText(result)

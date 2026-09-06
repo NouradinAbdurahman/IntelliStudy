@@ -120,12 +120,12 @@ export default function SummarizePage() {
       const result = await summarizeText(inputText)
       // Animate the summary like the chatbot
       let i = 0
-      const step = 3
+      const step = 20
       function typeNextChar() {
         if (i < result.length) {
           setPartialSummary(result.slice(0, i + step))
           i += step
-          typingTimeout.current = setTimeout(typeNextChar, 8)
+          typingTimeout.current = setTimeout(typeNextChar, 3)
         } else {
           setPartialSummary(result)
           setSummary(result)
